@@ -1,0 +1,95 @@
+
+.login-container {
+  background-color: #76CEA1 !important;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+#login-body{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login-elements{
+  display:inline-block;
+}
+.loading {
+  height: 5px;
+  background-color: #9b59b6;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
+.signIn-button {
+  width:100%;
+  margin-top: 4px;
+  display:inline-block;
+  background-color: #2c8c71e0;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #188c6c;
+  border-color: #28a745;
+}
+
+.header{
+  background-color: #2c8c71e0;
+}
+
+.avatar {
+ height:115px
+}
+.flex {
+  display: flex;
+  flex-direction: row;
+  padding-left: 20%
+}
+
+a{
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+  padding-left: 25px;
+}
+
+h2, .h2 {
+  font-size: 2rem;
+  color: white;
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid #fff !important;
+}
+
+.signbtn{
+  width: 122px;
+}
+
+.badge{
+  background-color: blue;
+}
+
+.sign-icon{
+  top: 39%;
+  height: 43px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -202%);
+}
+
+.card-btn{
+  position: absolute;
+  left: 38%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
