@@ -32,3 +32,7 @@ npm start
 
 The app will automatically launch in your browser.
 
+## Firebase
+The app is hosted in google firebase you can clink on the below link to launch the app online,
+https://udacity-would-you-rather.firebaseapp.com/
+
