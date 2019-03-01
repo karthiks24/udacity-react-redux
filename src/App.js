@@ -26,12 +26,6 @@ class App extends Component {
         }
 
     }
-    NoMatch = ({ location }) => (
-
-        <div id='login-body'>
-            <h3>No match for <code>{location.pathname}</code> Please Navigate to Home Page</h3>
-        </div>
-    )
 
     render() {
         return (
