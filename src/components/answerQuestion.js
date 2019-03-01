@@ -38,11 +38,11 @@ class AnswerPoll extends Component {
                             <Card.Body>
                                 <Row>
                                     <Col xs={4}>
-                                        <Image circle className="avatar" src={this.props.author.avatarURL}/>
+                                        <Image className="avatar" src={this.props.author.avatarURL}/>
                                     </Col>
                                     <Col xs={6}>
                                         <Card.Title>Would You Rather</Card.Title>
-                                        <Card.Text>
+                                        <div>
                                             <Form.Group as={Row}>
                                                 <Form.Check
                                                     onChange={this.handleChange}
@@ -61,12 +61,12 @@ class AnswerPoll extends Component {
                                                 <form onSubmit={this.handleSubmit}>
                                                     <Button className='signIn-button'
                                                             disabled={this.state.disable}
-                                                            type="submit" bsStyle="success">
+                                                            type="submit" bsstyle="success">
                                                         Submit
                                                     </Button>
                                                 </form>
                                             </Form.Group>
-                                        </Card.Text>
+                                        </div>
                                     </Col>
                                 </Row>
                             </Card.Body>

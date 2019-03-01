@@ -62,7 +62,7 @@ export function categorizeQuestions (question,loggedUser,users) {
 //To save the voted option
 export function handleVote(loggedUser, question, answer) {
     return async dispatch => {
-        const savedQuestion= await _saveQuestionAnswer({authedUser: loggedUser,
+        await _saveQuestionAnswer({authedUser: loggedUser,
             qid: question.id,
             answer: answer})
         try{

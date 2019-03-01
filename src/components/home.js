@@ -7,7 +7,7 @@ class Home extends Component {
 
     state = {
         answered: false,
-        unanswered: false
+        unanswered: true
     }
 
     handleAnsweredClick = () => {
@@ -35,8 +35,8 @@ class Home extends Component {
                             <Card.Body>
                                 <Card.Title>{this.props.username}</Card.Title>
                                 <Card.Text>
-                                    <p>Answered Questions : {this.props.answered}</p>
-                                    <p> UnAnswered Questions: {this.props.unanswered}</p>
+                                    <span>Answered Questions : {this.props.answered}</span>
+                                    <span> UnAnswered Questions: {this.props.unanswered}</span>
                                 </Card.Text>
                                 <ButtonGroup size="sm" className="mt-3">
                                     <Button onClick={this.handleAnsweredClick}>View Answered</Button>
@@ -48,19 +48,21 @@ class Home extends Component {
                     <Col sm={8}>
                         {this.state.unanswered ? <h2>Unanswered Questions</h2> : <h2>Answered Questions</h2>}
                         {questionData.map((question) => (
-                            <Card style={{width: '38rem'}}>
+                            <Card key={question.id} style={{width: '38rem'}}>
                                 <Card.Header>{question.author}{this.state.unanswered? ' asks': ' asked'}</Card.Header>
                                 <Card.Body>
                                     <Row>
                                         <Col xs={3}>
-                                            <Image circle className="avatar"
+                                            <Image  className="avatar"
                                                    src={this.props.users[question.author].avatarURL}/>
                                         </Col>
                                         <Col xs={6}>
                                             <Card.Title>Would You Rather</Card.Title>
                                             <Card.Text>
-                                                <p>{question.optionOne.text}</p>
-                                                <p>{question.optionTwo.text}</p>
+                                                <span>{question.optionOne.text}</span>
+                                            </Card.Text>
+                                            <Card.Text>
+                                                <span>{question.optionTwo.text}</span>
                                             </Card.Text>
                                         </Col>
                                         <Col xs={3} >
@@ -68,7 +70,7 @@ class Home extends Component {
                                             <Link to={`/questions/${question.id}`}>
                                                 <Button className='signIn-button signbtn'
                                                         disabled={false}
-                                                        type="submit" bsStyle="success">
+                                                        type="submit" bsstyle="success">
                                                     {this.state.unanswered ? 'Answer Poll' : 'View Poll'}
                                                 </Button>
                                             </Link>

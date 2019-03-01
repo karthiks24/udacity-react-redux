@@ -11,6 +11,7 @@ import AddQuestion from './components/newQuestion'
 import {categorizeQuestions} from '../src/redux/actions/questionActions'
 import LeaderBoard from './components/leaderboard'
 import Loader from './components/Loader'
+import {NoMatch} from  './components/NoMatch'
 
 class App extends Component {
 
@@ -25,6 +26,12 @@ class App extends Component {
         }
 
     }
+    NoMatch = ({ location }) => (
+
+        <div id='login-body'>
+            <h3>No match for <code>{location.pathname}</code> Please Navigate to Home Page</h3>
+        </div>
+    )
 
     render() {
         return (
@@ -33,13 +40,17 @@ class App extends Component {
                     {this.props.loading === true ? <Loader/> : null}
                     {this.props.displayLogin ? null : <Navigation/>}
                     {this.props.loading === true ? null :
-                        this.props.displayLogin ? <SignIn/> :
+                        this.props.displayLogin ?
+                            <Switch>
+                                <Route  path='/' component={SignIn} />
+                                <Route path='*'  component={NoMatch}/>
+                            </Switch> :
                             <Switch>
                                 <Route exact path='/' component={Home}/>
                                 <Route exact path='/add' component={AddQuestion}/>
                                 <Route exact path='/leaderboard' component={LeaderBoard}/>
                                 <Route exact path='/questions/:questionId' component={QuestionContainer}/>
-                                <Route path="*" component={Home} />
+                                <Route  path='*' component={NoMatch} />
                             </Switch>
                     }
                 </div>

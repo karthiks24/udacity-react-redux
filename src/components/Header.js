@@ -1,38 +1,37 @@
-import React, {Component, Fragment} from 'react'
+import React from 'react'
 import {Nav, Navbar} from 'react-bootstrap'
 import {connect} from 'react-redux'
 import {logoutUser} from '../redux/actions/loggedUserAction'
 import {Link} from 'react-router-dom'
-class Navigation extends Component {
 
-    logout = () => {
-        this.props.logoutUser()
-    }
+const logout = () => {
+    this.props.logoutUser()
+}
 
-    render() {
-        return (
-            <div>
-                <Navbar>
-                    <Navbar.Collapse>
-                        <Nav className="mr-auto">
-                            <Link to="/">Home</Link>
-                            <Link to="/add">New Question</Link>
-                            <Link to="/leaderboard">Leaderboard</Link>
-                        </Nav>
-                        <Navbar.Toggle/>
-                        {this.props.username &&
-                        <Navbar.Collapse className="justify-content-end">
-                            <Navbar.Text>
-                                Hello, {this.props.username}!
-                            </Navbar.Text>
-                            <Nav.Link href="/" onClick={this.logout}>LogOut</Nav.Link>
-                        </Navbar.Collapse>}
-                    </Navbar.Collapse>
-                </Navbar>
-                <hr/>
-            </div>
-        )
-    }
+const Navigation = (props) => {
+    return (
+        <div>
+            <Navbar>
+                <Navbar.Collapse>
+                    <Nav className="mr-auto">
+                        <Link to="/">Home</Link>
+                        <Link to="/add">New Question</Link>
+                        <Link to="/leaderboard">Leaderboard</Link>
+                    </Nav>
+                    <Navbar.Toggle/>
+                    {props.username &&
+                    <Navbar.Collapse className="justify-content-end">
+                        <Navbar.Text>
+                            Hello, {props.username}!
+                        </Navbar.Text>
+                        <Nav.Link href="/" onClick={logout}>LogOut</Nav.Link>
+                    </Navbar.Collapse>}
+                </Navbar.Collapse>
+            </Navbar>
+            <hr/>
+        </div>
+    )
+
 }
 
 const mapStateToProps = (state) => {

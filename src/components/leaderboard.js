@@ -7,22 +7,26 @@ class LeaderBoard extends Component {
     render() {
         return (
             <div>
-            <h2>Know You score!!</h2>
-            <div className='flex'>
-                { this.props.leaders.map((leader) => (
-                    <Card style={{width: '18rem'}}>
-                        <Card.Img variant="top" src={leader.avatarURL}/>
-                        <Card.Body>
-                            <Card.Title>{leader.name}</Card.Title>
-                            <Card.Text>
-                                <p>Answered Questions : {(Object.keys(leader.answers)).length}</p>
-                                <p> Created Questions: {leader.questions.length}</p>
-                                <p> score: {(Object.keys(leader.answers)).length + leader.questions.length}</p>
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
-            ))}
-            </div>
+                <h2>Know You score!!</h2>
+                <div className='flex'>
+                    {this.props.leaders.map((leader) => (
+                        <Card key={leader.name} style={{width: '18rem'}}>
+                            <Card.Img variant="top" src={leader.avatarURL}/>
+                            <Card.Body>
+                                <Card.Title>{leader.name}</Card.Title>
+                                <Card.Text>
+                                    <span>Answered Questions : {(Object.keys(leader.answers)).length}</span>
+                                </Card.Text>
+                                <Card.Text>
+                                    <span> Created Questions: {leader.questions.length}</span>
+                                </Card.Text>
+                                <Card.Text>
+                                    <span> score: {(Object.keys(leader.answers)).length + leader.questions.length}</span>
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    ))}
+                </div>
             </div>)
 
     }

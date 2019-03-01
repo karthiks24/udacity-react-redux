@@ -24,19 +24,19 @@ export default class viewPoll extends Component {
                             <Card.Body>
                                 <Row>
                                     <Col xs={3}>
-                                        <Image circle className="avatar"
+                                        <Image  className="avatar"
                                                src={this.props.author.avatarURL}/>
                                     </Col>
                                     <Col xs={9}>
                                         <Card.Title>Would You Rather</Card.Title>
                                         <ListGroup variant="flush">
-                                            <ListGroup.Item bsStyle={optOne ? 'info' : null}>
+                                            <ListGroup.Item bsstyle={optOne ? 'info' : null}>
                                                 {optOne ? <Badge> Your Vote</Badge> : null}
                                                 <p>Would you rather {question.optionOne.text} ?</p>
                                                 <ProgressBar now={optOnePercentage} label={`${optOnePercentage}%`}/>
                                                 <h5>{optOneVotes} out of {totalVotes} votes</h5>
                                             </ListGroup.Item>
-                                            <ListGroup.Item bsStyle={optTwo ? 'info' : null}>
+                                            <ListGroup.Item bsstyle={optTwo ? 'info' : null}>
                                                 {optTwo ? <Badge> Your Vote</Badge> : null}
                                                 <p>Would you rather {question.optionTwo.text} ?</p>
                                                 <ProgressBar now={optTwoPercentage} label={`${optTwoPercentage}%`}/>

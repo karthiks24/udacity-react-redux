@@ -36,7 +36,7 @@ class signIn extends Component {
             <div className="login-container">
                 <Image className='sign-icon' src={image} rounded />
                <div id='login-body'>
-                   <Form id='login-elements' controlId="exampleForm.ControlSelect1" onSubmit={this.handleSubmit}>
+                   <Form id='login-elements' controlid="exampleForm.ControlSelect1" onSubmit={this.handleSubmit}>
                        <Form.Control as="select" onChange={this.handleChange}>
                            <option hidden value="default">Select a user...</option>
                            {(this.props.users).map((user) => (

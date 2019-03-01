@@ -15,8 +15,6 @@ class NewQuestion extends Component {
     }
 
     handleChange = (e) => {
-        const optionText = e.target.id
-        const text = e.target.value
         this.setState({
             [e.target.id]: e.target.value
         }, () => {
@@ -60,7 +58,7 @@ class NewQuestion extends Component {
                                         <br/>
                                         <Button className='signIn-button'
                                                 disabled={this.state.disabled}
-                                                type="submit" bsStyle="success">
+                                                type="submit" bsstyle="success">
                                             Add Question
                                         </Button>
                                     </Form>

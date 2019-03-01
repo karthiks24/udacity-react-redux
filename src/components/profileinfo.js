@@ -12,8 +12,8 @@ class Profile extends Component {
                 <Card.Body>
                     <Card.Title>{this.props.username}</Card.Title>
                     <Card.Text>
-                        <p>Answered Questions : {this.props.answered}</p>
-                        <p> UnAnswered Questions: {this.props.unanswered}</p>
+                        <span>Answered Questions : {this.props.answered}</span>
+                        <span> UnAnswered Questions: {this.props.unanswered}</span>
                     </Card.Text>
                 </Card.Body>
             </Card>

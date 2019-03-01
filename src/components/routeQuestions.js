@@ -2,10 +2,12 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import AnswerPoll from './answerQuestion'
 import ViewPoll from './viewPoll'
+import {NoMatch} from './NoMatch'
 
 class QuestionContainer extends Component {
     render() {
         return (
+            this.props.question === null ? <NoMatch/> :
             this.props.optOne || this.props.optTwo ?  <ViewPoll
                 question={this.props.question}
                 author={this.props.author}
@@ -23,10 +25,10 @@ class QuestionContainer extends Component {
 const mapStateToProps = (state, ownProps) => {
     const question = state.questions[ownProps.match.params.questionId]
     return {
-        optOne: question.optionOne.votes.includes(state.loggedUser),
-        optTwo: question.optionTwo.votes.includes(state.loggedUser),
-        author: state.users[question.author],
-        question: question
+        optOne: question?question.optionOne.votes.includes(state.loggedUser): null,
+        optTwo: question?question.optionTwo.votes.includes(state.loggedUser) :null,
+        author: question?state.users[question.author]: null ,
+        question: question?question: null
     }
 }
 
